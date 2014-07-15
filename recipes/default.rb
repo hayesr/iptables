@@ -32,7 +32,8 @@ template "/usr/sbin/rebuild-iptables" do
   source "rebuild-iptables.erb"
   mode 0755
   variables(
-    :hashbang => ::File.exist?('/usr/bin/ruby') ? '/usr/bin/ruby' : '/opt/chef/embedded/bin/ruby'
+    # :hashbang => ::File.exist?('/usr/local/bin/ruby') ? '/usr/local/bin/ruby' : '/opt/chef/embedded/bin/ruby'
+    :hashbang => '/usr/bin/env ruby'
   )
 end
 
